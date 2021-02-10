@@ -9,12 +9,21 @@ namespace CunsoleUı
     {
         static void Main(string[] args)
         {
+            CarTest();
+            //BrandManager brandManager = new BrandManager(new EfBrandDal());
+            //foreach (var brand in brandManager.GetAll())
+            //{
+            //    Console.WriteLine(brand.BrandName);
+            //}
+        }
+
+        private static void CarTest()
+        {
             CarManager carmanager = new CarManager(new EfCarDal());
-            foreach (var car in carmanager.GetByDailyPrice(800,1000))       
+            foreach (var car in carmanager.GetCarDetails())
             {
-                Console.WriteLine(car.BrandId);
+                Console.WriteLine(car.BrandName +"/" + car.DailyPrice);
             }
-            
         }
     }
 }
