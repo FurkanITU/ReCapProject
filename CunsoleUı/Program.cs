@@ -20,7 +20,7 @@ namespace CunsoleUı
         private static void CarTest()
         {
             CarManager carmanager = new CarManager(new EfCarDal());
-            foreach (var car in carmanager.GetCarDetails())
+            foreach (var car in carmanager.GetCarDetails().Data)
             {
                 Console.WriteLine(car.BrandName +"/" + car.DailyPrice);
             }
